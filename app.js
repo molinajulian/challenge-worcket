@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('./app/routes');
 const { bodySizeLimit, parameterLimit } = require('./config').api;
-const { initRedis } = require('./app/services/redis');
+const { handle } = require('./app/middlewares/errors');
 
 const app = express();
 
@@ -28,4 +28,5 @@ app.use((_, res, next) => {
   next();
 });
 routes.init(app);
+app.use(handle);
 module.exports = app;
