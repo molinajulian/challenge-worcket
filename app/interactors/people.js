@@ -55,7 +55,7 @@ const getNestedData = personData => {
   return Promise.reduce(
     ['films', 'species', 'vehicles', 'starships'],
     (previous, nestedKey) => {
-      logger.info(`Trying to obtain ${nestedKey} from person with name ${personData.name}`);
+      logger.info(`Trying to obtain ${nestedKey}`);
       return Promise.map(personData[nestedKey], url => {
         const id = getIdFromUrl(url);
         return getEntity({ entity: nestedKey, id }).then(({ name, title }) => ({
