@@ -1,3 +1,8 @@
-const logger = require('pino')();
+const logger = require('pino');
 
-module.exports = logger;
+module.exports = logger({
+  prettyPrint: {
+    translateTime: true,
+    colorize: false
+  }
+});
