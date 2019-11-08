@@ -17,5 +17,11 @@ module.exports = {
   },
   swapi: {
     url: process.env.SWAPI_URL
+  },
+  authentication: {
+    headerName: process.env.AUTH_HEADER_NAME || 'authorization',
+    secret: process.env.AUTH_SECRET || 'super secret',
+    expireUnit: process.env.AUTH_EXPIRES_UNIT || 'h',
+    expireValue: process.env.AUTH_EXPIRE_VALUE || 1
   }
 };

@@ -3,7 +3,9 @@ const {
   INTERNAL_SERVER_ERROR,
   NOT_FOUND,
   BAD_REQUEST,
-  SWAPI_DEFAULT_ERROR
+  SWAPI_DEFAULT_ERROR,
+  SCHEMA_ERROR,
+  UNAUTHORIZED
 } = require('../errors/internal_codes');
 const logger = require('../logger');
 
@@ -13,7 +15,9 @@ const statusCodes = {
   [INTERNAL_SERVER_ERROR]: 500,
   [NOT_FOUND]: 404,
   [BAD_REQUEST]: 400,
-  [SWAPI_DEFAULT_ERROR]: 500
+  [SWAPI_DEFAULT_ERROR]: 500,
+  [SCHEMA_ERROR]: 422,
+  [UNAUTHORIZED]: 401
 };
 
 exports.handle = (error, _, res, next) => {
