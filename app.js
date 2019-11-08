@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
 
 const routes = require('./app/routes');
 const { bodySizeLimit, parameterLimit } = require('./config').api;
 const { handle } = require('./app/middlewares/errors');
+const documentation = require('./app/documentation');
 
 const app = express();
 
@@ -16,6 +18,7 @@ app.use(
     extended: true
   })
 );
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(documentation));
 //configure cors
 app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');

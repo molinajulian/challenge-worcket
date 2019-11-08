@@ -7,5 +7,5 @@ const { verifyToken, verifyPermissions } = require('../app/middlewares/authentic
 exports.init = app => {
   app.get('/people', [verifyToken, verifyPermissions], getAllPersons);
   app.get('/people/:id', [verifyToken, verifyPermissions], getPerson);
-  app.post('/login', validateSchema(loginSchema), login);
+  app.post('/users/login', validateSchema(loginSchema), login);
 };
