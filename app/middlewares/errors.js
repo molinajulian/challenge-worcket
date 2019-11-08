@@ -5,7 +5,8 @@ const {
   BAD_REQUEST,
   SWAPI_DEFAULT_ERROR,
   SCHEMA_ERROR,
-  UNAUTHORIZED
+  UNAUTHORIZED,
+  BAD_TOKEN
 } = require('../errors/internal_codes');
 const logger = require('../logger');
 
@@ -17,7 +18,8 @@ const statusCodes = {
   [BAD_REQUEST]: 400,
   [SWAPI_DEFAULT_ERROR]: 500,
   [SCHEMA_ERROR]: 422,
-  [UNAUTHORIZED]: 401
+  [UNAUTHORIZED]: 401,
+  [BAD_TOKEN]: 400
 };
 
 exports.handle = (error, _, res, next) => {
