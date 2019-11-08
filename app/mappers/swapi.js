@@ -1,1 +1,3 @@
-exports.mapEntity = results => results.map(({ url, name }) => ({ id: url.replace(/\D/g, ''), name }));
+exports.mapEntity = results => results.map(({ url, name }) => ({ id: exports.getIdFromUrl(url), name }));
+
+exports.getIdFromUrl = url => url.replace(/\D/g, '');
