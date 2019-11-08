@@ -1,8 +1,8 @@
 const NodeCache = require('node-cache');
 
-const { DEFAULT_CACHE_TTL_SEC } = require('../constants');
+const { ttlCache } = require('../../config').api;
 
-const cache = new NodeCache({ stdTTL: DEFAULT_CACHE_TTL_SEC });
+const cache = new NodeCache({ stdTTL: ttlCache });
 
 exports.getKey = ({ key }) => Promise.resolve(cache.get(key));
 
