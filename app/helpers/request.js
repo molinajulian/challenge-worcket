@@ -12,4 +12,4 @@ const buildRequest = ({ method = 'GET', url = swapiUrl, endpoint, qs }) => {
   return defaultOptions;
 };
 
-exports.request = options => rp(buildRequest(options)).catch(console.log);
+exports.request = options => rp(buildRequest(options));
