@@ -1,13 +1,11 @@
-const { inspect } = require('util');
-
 const { getPersons, getEntity, getPerson } = require('../services/swapi');
-const { setKey, getKey } = require('../services/redis');
+const { setKey, getKey } = require('../services/cache');
 const { mapEntity, getIdFromUrl } = require('../mappers/swapi');
 const { Promise } = require('../helpers/bluebird');
 const logger = require('../logger');
 
 const setNewData = ({ data, key }) =>
-  setKey({ key, value: JSON.stringify(data) }).then(() => {
+  setKey({ key, value: data }).then(() => {
     logger.info('Data was saved successfully');
     return data;
   });
@@ -88,7 +86,7 @@ const getSwapiData = ({ functionData = () => Promise.resolve, key, params }) => 
   return getKey({ key }).then(responseCached => {
     if (responseCached) {
       logger.info('Exist cache data and was obtained successfully');
-      return Promise.resolve(JSON.parse(responseCached));
+      return Promise.resolve(responseCached);
     }
     logger.info('The response does not exist in cache data');
     return functionData(params);
