@@ -1,6 +1,6 @@
 # Challenge Worcket
 
-Worcket challenge is a node project which objective is provide information about Start Wars characters.
+Worcket challenge is a node project which has the purpose is to provide information about Start Wars characters.
 
 ## Requirements
 
