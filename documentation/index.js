@@ -1,4 +1,4 @@
-const { port } = require('../../config').api;
+const { port } = require('../config').api;
 const schemas = require('./schemas');
 const parameters = require('./parameters');
 const responses = require('./responses');
