@@ -1,6 +1,6 @@
 # Challenge Worcket
 
-Worcket challenge is a node project to evaluate candidates.
+Worcket challenge is a node project which objective is provide information about Start Wars characters.
 
 ## Requirements
 
@@ -21,12 +21,12 @@ If it does not sound familiar you can read the following [article](https://mediu
 
 ## Documentation
 
-When the project is running, you can go to the endpoint `/docs` and you will see the endpoints implemented with his your parameters.
+When the project is running, you can go to the endpoint `/docs` and you will see the endpoints implemented with their parameters and responses.
 
 ## Coverage
 
-For generate to coverage report, you can run `npm run coverage`. This command create `coverage` folder, which contains all information about project coverage.
-The actually statiscis are the following
+To generate a coverage report, you can run `npm run coverage`. This command create the `coverage` folder, which contains all information about project coverage.
+The current statiscis are the following
 
 ```
 Statements: 97.55% (279/286) 
@@ -38,8 +38,8 @@ Lines: 98.4% (246/250)
 
 ## Test
 
-For test, run `npm  test`. It was used [Jest](https://jestjs.io/docs/en/getting-started.html).
+To test, run `npm  test`. It uses [Jest](https://jestjs.io/docs/en/getting-started.html).
 
 ## Authors and acknowledgment
 
-Julian Molina
+Julián Molina
