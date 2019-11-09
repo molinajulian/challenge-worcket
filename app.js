@@ -5,7 +5,7 @@ const swaggerUi = require('swagger-ui-express');
 const routes = require('./app/routes');
 const { bodySizeLimit, parameterLimit } = require('./config').api;
 const { handle } = require('./app/middlewares/errors');
-const documentation = require('./app/documentation');
+const documentation = require('./documentation');
 
 const app = express();
 

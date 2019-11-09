@@ -4,7 +4,9 @@
   "description": "Challenge by Julian Molina",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest --runInBand --detectOpenHandles  --forceExit",
+    "coverage": "npm run test --coverage"
   },
   "author": "Julian Molina",
   "license": "ISC",
@@ -22,5 +24,10 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
     "swagger-ui-express": "^4.1.2"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
   }
 }

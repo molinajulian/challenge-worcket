@@ -1,6 +1,6 @@
 const { decode } = require('../services/jwt');
 const { headerName } = require('../../config').authentication;
-const { unauthorized } = require('../errors/builders');
+const { unauthorized, badToken } = require('../errors/builders');
 const { ADMIN } = require('../constants');
 
 exports.verifyToken = async (req, res, next) => {
@@ -11,7 +11,7 @@ exports.verifyToken = async (req, res, next) => {
     req.user = await decode(req.headers[headerName].split(' ')[1]);
     next();
   } catch (err) {
-    next(err);
+    err.message.includes('expired') ? next(badToken(err.message)) : next(err);
   }
 };
 
