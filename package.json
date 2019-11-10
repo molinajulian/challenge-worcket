@@ -1,0 +1,33 @@
+{
+  "name": "worketChallenge",
+  "version": "1.0.0",
+  "description": "Challenge by Julian Molina",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --runInBand --detectOpenHandles  --forceExit",
+    "coverage": "npm run test --coverage"
+  },
+  "author": "Julian Molina",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "node-cache": "^5.0.1",
+    "pino": "^5.13.5",
+    "pino-pretty": "^3.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "swagger-ui-express": "^4.1.2"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  }
+}
